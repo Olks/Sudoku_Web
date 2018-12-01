@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- Write your comments here -->
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <title>My Webpage</title>
+    <script>
+      function myFunction() {
+        var x = document.getElementsByClassName("city");
+        for (var i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+      }
+    </script>
+
+  </head>
+
+  <body>
+
+<p id="p01" title="I'm a tooltip">
+Solve the sudoku!
+</p>
+
+<table id = "all_cells">
+  <tr>
+    <th id = "cell11" contenteditable="true"></th>
+    <th id = "cell12" contenteditable="true"></th>
+    <th id = "cell13" class="separate_table" contenteditable="true"></th>
+    <th id = "cell14" contenteditable="true"></th>
+    <th id = "cell15" contenteditable="true"></th>
+    <th id = "cell16" class="separate_table" contenteditable="true"></th>
+    <th id = "cell17" contenteditable="true"></th>
+    <th id = "cell18" contenteditable="true"></th>
+    <th id = "cell19" class="separate_table" contenteditable="true"></th>
+  </tr>
+  <tr>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+  </tr>
+  <tr class="table_separable">
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+  </tr>
+  <tr>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+  </tr>
+  <tr>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+  </tr>
+  <tr class="table_separable">
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+  </tr>
+  <tr>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+  </tr>
+  <tr>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+  </tr>
+  <tr class="table_separable">
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th contenteditable="true"></th>
+    <th  class="separate_table" contenteditable="true" onkeypress="myFunction()"></th>
+  </tr>
+</table>
+
+<script>
+    document.getElementById("all_cells").addEventListener("input", function() {
+      document.getElementById("cell15").innerHTML = Number(document.getElementById("cell15").innerHTML) + Number(1)});
+</script>
+
+
+<hr>
+<p><abbr title="Congratulations">Congrats!</abbr></p>
+
+
+  </body>
+</html>
