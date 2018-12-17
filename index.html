@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <!-- Write your comments here -->
-<!-- new comment -->
-<html lang="en">   <!--dir="ltr"-->
+
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <title>My Webpage</title>
     <script>
-      function myFunction() {
-        var x = document.getElementsByClassName("city");
-        for (var i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
+      function check_if_done() {
+        var check_sum = 0
+        var i;
+        for (i = 0; i < 9; i++) {
+
+          var square11 = [
+            Number(document.getElementById("cell" + (11 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
+            Number(document.getElementById("cell" + (12 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
+            Number(document.getElementById("cell" + (13 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
+            Number(document.getElementById("cell" + (21 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
+            Number(document.getElementById("cell" + (22 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
+            Number(document.getElementById("cell" + (23 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
+            Number(document.getElementById("cell" + (31 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
+            Number(document.getElementById("cell" + (32 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
+            Number(document.getElementById("cell" + (33 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML)
+          ];
+
+          var sorted_joined_square11 = square11.sort(function(a, b){return a - b}).join('');
+
+          if (sorted_joined_square11 == '123456789') {
+            i;
+            check_sum += 1
+          }
         }
+        if (check_sum == 9) {
+            document.getElementById("p01").innerHTML = "Done!"
+        } else {
+            document.getElementById("p01").innerHTML = "Sudoku not solved yet ..."
+          }
       }
     </script>
 
@@ -26,114 +50,114 @@ Solve the sudoku!
 
 <table id = "all_cells">
   <tr>
-    <th id = "cell11" contenteditable="true"></th>
-    <th id = "cell12" contenteditable="true"></th>
-    <th id = "cell13" class="separate_table" contenteditable="true"></th>
-    <th id = "cell14" contenteditable="true"></th>
+    <th id = "cell11" contenteditable="true">7</th>
+    <th id = "cell12" contenteditable="true">3</th>
+    <th id = "cell13" class="separate_table" contenteditable="true">5</th>
+    <th id = "cell14" contenteditable="true">6</th>
     <th id = "cell15" contenteditable="true"></th>
-    <th id = "cell16" class="separate_table" contenteditable="true"></th>
-    <th id = "cell17" contenteditable="true"></th>
-    <th id = "cell18" contenteditable="true"></th>
-    <th id = "cell19" class="separate_table" contenteditable="true"></th>
+    <th id = "cell16" class="separate_table" contenteditable="true">4</th>
+    <th id = "cell17" contenteditable="true">8</th>
+    <th id = "cell18" contenteditable="true">9</th>
+    <th id = "cell19" class="separate_table" contenteditable="true">2</th>
   </tr>
   <tr>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
+    <th id = "cell21" contenteditable="true">8</th>
+    <th id = "cell22" contenteditable="true"></th>
+    <th id = "cell23" class="separate_table" contenteditable="true">2</th>
+    <th id = "cell24" contenteditable="true">9</th>
+    <th id = "cell25" contenteditable="true">7</th>
+    <th id = "cell26" class="separate_table" contenteditable="true">3</th>
+    <th id = "cell27" contenteditable="true">5</th>
+    <th id = "cell28" contenteditable="true">6</th>
+    <th id = "cell29" class="separate_table" contenteditable="true">1</th>
   </tr>
   <tr class="table_separable">
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
+    <th id = "cell31" contenteditable="true">9</th>
+    <th id = "cell32" contenteditable="true">6</th>
+    <th id = "cell33" class="separate_table" contenteditable="true">1</th>
+    <th id = "cell34" contenteditable="true">2</th>
+    <th id = "cell35" contenteditable="true">8</th>
+    <th id = "cell36" class="separate_table" contenteditable="true">5</th>
+    <th id = "cell37" contenteditable="true">3</th>
+    <th id = "cell38" contenteditable="true">7</th>
+    <th id = "cell39" class="separate_table" contenteditable="true">4</th>
   </tr>
   <tr>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
+    <th id = "cell41" contenteditable="true">2</th>
+    <th id = "cell42" contenteditable="true">8</th>
+    <th id = "cell43" class="separate_table" contenteditable="true">6</th>
+    <th id = "cell44" contenteditable="true"></th>
+    <th id = "cell45" contenteditable="true">4</th>
+    <th id = "cell46" class="separate_table" contenteditable="true">9</th>
+    <th id = "cell47" contenteditable="true">1</th>
+    <th id = "cell48" contenteditable="true">5</th>
+    <th id = "cell49" class="separate_table" contenteditable="true">7</th>
   </tr>
   <tr>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
+    <th id = "cell51" contenteditable="true">4</th>
+    <th id = "cell52" contenteditable="true">1</th>
+    <th id = "cell53" class="separate_table" contenteditable="true">3</th>
+    <th id = "cell54" contenteditable="true">8</th>
+    <th id = "cell55" contenteditable="true">5</th>
+    <th id = "cell56" class="separate_table" contenteditable="true">7</th>
+    <th id = "cell57" contenteditable="true">9</th>
+    <th id = "cell58" contenteditable="true"></th>
+    <th id = "cell59" class="separate_table" contenteditable="true">6</th>
   </tr>
   <tr class="table_separable">
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
+    <th id = "cell61" contenteditable="true"></th>
+    <th id = "cell62" contenteditable="true">7</th>
+    <th id = "cell63" class="separate_table" contenteditable="true">9</th>
+    <th id = "cell64" contenteditable="true">1</th>
+    <th id = "cell65" contenteditable="true">2</th>
+    <th id = "cell66" class="separate_table" contenteditable="true">6</th>
+    <th id = "cell67" contenteditable="true">4</th>
+    <th id = "cell68" contenteditable="true">3</th>
+    <th id = "cell69" class="separate_table" contenteditable="true">8</th>
   </tr>
   <tr>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
+    <th id = "cell71" contenteditable="true">1</th>
+    <th id = "cell72" contenteditable="true">5</th>
+    <th id = "cell73" class="separate_table" contenteditable="true">7</th>
+    <th id = "cell74" contenteditable="true">4</th>
+    <th id = "cell75" contenteditable="true">9</th>
+    <th id = "cell76" class="separate_table" contenteditable="true">2</th>
+    <th id = "cell77" contenteditable="true">6</th>
+    <th id = "cell78" contenteditable="true">8</th>
+    <th id = "cell79" class="separate_table" contenteditable="true">3</th>
   </tr>
   <tr>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
+    <th id = "cell81" contenteditable="true">6</th>
+    <th id = "cell82" contenteditable="true">9</th>
+    <th id = "cell83" class="separate_table" contenteditable="true">4</th>
+    <th id = "cell84" contenteditable="true"></th>
+    <th id = "cell85" contenteditable="true">3</th>
+    <th id = "cell86" class="separate_table" contenteditable="true">8</th>
+    <th id = "cell87" contenteditable="true">2</th>
+    <th id = "cell88" contenteditable="true">1</th>
+    <th id = "cell89" class="separate_table" contenteditable="true">5</th>
   </tr>
   <tr class="table_separable">
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th contenteditable="true"></th>
-    <th  class="separate_table" contenteditable="true" onkeypress="myFunction()"></th>
+    <th id = "cell91" contenteditable="true">3</th>
+    <th id = "cell92" contenteditable="true">2</th>
+    <th id = "cell93" class="separate_table" contenteditable="true">8</th>
+    <th id = "cell94" contenteditable="true">5</th>
+    <th id = "cell95" contenteditable="true">6</th>
+    <th id = "cell96" class="separate_table" contenteditable="true">1</th>
+    <th id = "cell97" contenteditable="true">7</th>
+    <th id = "cell98" contenteditable="true">4</th>
+    <th id = "cell99" class="separate_table" contenteditable="true">9</th>
   </tr>
 </table>
 
 <script>
     document.getElementById("all_cells").addEventListener("input", function() {
-      document.getElementById("cell15").innerHTML = Number(document.getElementById("cell15").innerHTML) + Number(1)});
-</script>
+        check_if_done()}
+      )
+//     function() {
+//       document.getElementById("cell15").innerHTML = Number(document.getElementById("cell15").innerHTML) + Number(1)});
+  </script>
 
-
-<hr>
-<p><abbr title="Congratulations">Congrats!</abbr></p>
 
 
   </body>
