@@ -11,27 +11,26 @@
       function check_if_done() {
         var check_sum = 0
         var i;
+		var j;
         for (i = 0; i < 9; i++) {
+			var square = []
+			var row = []
+			var col = []
+			for (j = 0; j < 9; j++) {
+				square[j] = Number(document.getElementById("cell" + ((Math.floor(j/3) + 1)*10 + (j%3 + 1) + Math.floor(i/3)*30 + (i%3)*3)).innerHTML);
+				row[j] = Number(document.getElementById("cell" + ((i + 1)*10 + (j + 1))).innerHTML);
+				col[j] = Number(document.getElementById("cell" + ((j + 1)*10 + (i + 1))).innerHTML);
+			}
+			var sorted_joined_square = square.sort(function(a, b){return a - b}).join('');
+			var sorted_joined_row = row.sort(function(a, b){return a - b}).join('');
+			var sorted_joined_col = col.sort(function(a, b){return a - b}).join('');
 
-          var square11 = [
-            Number(document.getElementById("cell" + (11 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
-            Number(document.getElementById("cell" + (12 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
-            Number(document.getElementById("cell" + (13 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
-            Number(document.getElementById("cell" + (21 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
-            Number(document.getElementById("cell" + (22 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
-            Number(document.getElementById("cell" + (23 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
-            Number(document.getElementById("cell" + (31 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
-            Number(document.getElementById("cell" + (32 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML),
-            Number(document.getElementById("cell" + (33 + Math.floor(i/3)*30 + (i%3)*3)).innerHTML)
-          ];
-
-          var sorted_joined_square11 = square11.sort(function(a, b){return a - b}).join('');
-
-          if (sorted_joined_square11 == '123456789') {
-            i;
-            check_sum += 1
-          }
-        }
+			  if (sorted_joined_square == '123456789' && 
+				  sorted_joined_row == '123456789' && 
+				  sorted_joined_col == '123456789') {
+				check_sum += 1
+			  }
+			}
         if (check_sum == 9) {
             document.getElementById("p01").innerHTML = "Done!"
         } else {
