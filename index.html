@@ -8,11 +8,32 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <title>My Webpage</title>
 	<script>
-	 function new_sudoku(transpose, rotate) {
-	 
+	 function new_sudoku() {
+		
+		transpose = Math.floor((Math.random() * 2));
+		rotate = Math.floor((Math.random() * 2));
+		while(document.getElementById("test").innerHTML == rotate + "," + transpose) {
+			transpose = Math.floor((Math.random() * 2));
+			rotate = Math.floor((Math.random() * 2));
+			}
 		document.getElementById("test").innerHTML = rotate + "," + transpose
 	 
-		var a = 1; b = 2; c = 3; d = 4; e = 5; f = 6; g = 7; h = 8; i = 9;
+		var numbers = [0,0,0,0,0,0,0,0,0]
+		
+		var n;
+		var new_num;
+		for (n = 0; n < 9; n++) {
+			new_num = Math.floor((Math.random() * 9) + 1)
+			while(numbers.indexOf(new_num) > -1){
+				new_num = Math.floor((Math.random() * 9) + 1)
+				}
+			numbers[n] = new_num
+		}
+		
+		var a = numbers[0]; b = numbers[1]; c = numbers[2]; 
+		var	d = numbers[3]; e = numbers[4]; f = numbers[5]; 
+		var g = numbers[6]; h = numbers[7]; i = numbers[8];
+		
 		var new_values = [
 						  ["","","","","","","",d ,""],
 						  [e ,d ,"",c ,g ,"",a ,"",""],
@@ -84,6 +105,11 @@
 <p id="p01" title="I'm a tooltip">
 Solve the sudoku!
 </p>
+<button type="button" 
+		onclick = "new_sudoku()">New Sudoku
+</button>
+
+<br><br>
 
 <table id = "all_cells">
   <tr>
@@ -189,11 +215,6 @@ Solve the sudoku!
 
 <hr>
 
-<button type="button" 
-		onclick = "new_sudoku(
-				Math.floor((Math.random() * 2)), 
-				Math.floor((Math.random() * 3)))">New Sudoku
-</button>
 <p id = 'test'> "..." </p>
 <script>new_sudoku()</script>
 <script>

@@ -47,3 +47,7 @@ table {
     border-top: 6px solid black;
     border-left: 6px solid black;
 }
+
+#test {
+	color: white;
+}
